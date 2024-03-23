@@ -15,11 +15,11 @@ public class PauseMenu : MonoBehaviour
        {
             if(isPaused)
             {
-            ResumeGame();
+                ResumeGame();
             } 
             else
             {
-            PauseGame();
+                PauseGame();
             }
        } 
     }
@@ -46,6 +46,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        Debug.Log("Quitting Game...");
         Application.Quit();
     }
 }
