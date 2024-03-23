@@ -12,7 +12,7 @@ public class IonScript : MonoBehaviour
     public BoxCollider2D potassiumCollider;
     public CircleCollider2D ionCollider;
     public Rigidbody2D ionBody;
-    bool done = false;
+    bool inPosition = false;
 
     public void OnMouseDown()
     {
@@ -26,7 +26,8 @@ public class IonScript : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        transform.position = GetMousePos() + _dragOffset;
+        if(!inPosition)
+            transform.position = GetMousePos() + _dragOffset;
     }
 
     Vector3 GetMousePos()
@@ -36,28 +37,25 @@ public class IonScript : MonoBehaviour
         return mousePos;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("entered");
-    }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        //gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        ionBody.bodyType = RigidbodyType2D.Static;
-        if (collision.gameObject.name == "SodiumCollider" && !isPotassium && !isDragging)
+        if ((collision.gameObject.name == "SodiumCollider" && !isPotassium && !isDragging))
         {
-            done = true;
-            print("done");
-        }
-        else if (collision.gameObject.name == "PotassiumCollider" && isPotassium)
+            ionBody.bodyType = RigidbodyType2D.Static;
+            transform.position = sodiumCollider.transform.position;
+            inPosition = true;
+            
+        } else if (collision.gameObject.name == "PotassiumCollider" && isPotassium)
         {
-
+            ionBody.bodyType = RigidbodyType2D.Static;
+            transform.position = potassiumCollider.transform.position;
+            inPosition = true;
         }
 
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (!done)
+        if (!inPosition)
         {
             ionBody.bodyType = RigidbodyType2D.Dynamic;
         }
@@ -73,6 +71,6 @@ public class IonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(ionBody.bodyType);
+        
     }
 }
