@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
 {
     public string sceneName = "";
     public float timer = 45;
-    public Boolean isActive = false;
+    public bool isActive = false;
     private void OnMouseDown()
     {
         Debug.Log("Alert Clicked");
@@ -18,9 +18,8 @@ public class SceneLoader : MonoBehaviour
 
     public void Update()
     {
-        if (isActive == true) {
+        if (isActive == true) 
             timer -= Time.deltaTime;
-        }
     }
 
 }
