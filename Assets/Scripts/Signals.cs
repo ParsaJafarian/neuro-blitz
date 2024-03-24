@@ -41,6 +41,7 @@ public class Signals : MonoBehaviour
         {
             Debug.Log("You won!");
             SceneManager.LoadScene("MainScene");
+            ScoreManager.modifyScore(500);
         }
     }
 
