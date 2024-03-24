@@ -21,7 +21,7 @@ public class ButtonScript : MonoBehaviour
     public void OnClick()
     {
         SceneManager.LoadScene("MainScene");
-        print("ButtonClicked!");
+        ScoreManager.modifyScore(-ScoreManager.gameScore);
     }
 
     // Update is called once per frame

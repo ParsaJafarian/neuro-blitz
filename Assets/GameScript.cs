@@ -10,12 +10,16 @@ public class GameScript : MonoBehaviour
     public int sodiumNumber;
     public GameObject potassium;
     public GameObject sodium;
+
     List<GameObject> potassiumList = new List<GameObject>();
     List<GameObject> sodiumList = new List<GameObject>();
     bool finished = false;
     // Start is called before the first frame update
     void Start()
     {
+        TotalIons.totalIons = 9;
+        finished = false;
+        TotalIons.mv = -90;
         for(int i = 0; i < potassiumNumber; i++)
         {
             GameObject currentPotassium = Instantiate(potassium);

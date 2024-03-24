@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public GameObject obj1;
     public string sceneName = "";
     public float timer = 3;
     public bool isActive = false;
@@ -26,9 +27,18 @@ public class SceneLoader : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if(obj1.name == "TransmitterAlert" || obj1.name == "MyelinAlert")
+        {
+            ScoreManager.modifyScore(100);
+            SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            // Load the scene as a popup
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
         Debug.Log("Alert Clicked");
-        // Load the scene as a popup
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        
 
     }
     public void setActivity(Boolean activity) {

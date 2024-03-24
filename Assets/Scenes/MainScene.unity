@@ -462,6 +462,10 @@ PrefabInstance:
       value: -77.5
       objectReference: {fileID: 0}
     - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
+      propertyPath: obj1
+      value: 
+      objectReference: {fileID: 2026513108}
+    - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
       propertyPath: isActive
       value: 0
       objectReference: {fileID: 0}
@@ -666,6 +670,10 @@ PrefabInstance:
       value: 61.3
       objectReference: {fileID: 0}
     - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
+      propertyPath: obj1
+      value: 
+      objectReference: {fileID: 464654743}
+    - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
       propertyPath: sceneName
       value: MyelinScene
       objectReference: {fileID: 0}
@@ -787,6 +795,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -154.72
       objectReference: {fileID: 0}
+    - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
+      propertyPath: obj1
+      value: 
+      objectReference: {fileID: 2069471318}
     - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
       propertyPath: alert
       value: 
@@ -918,6 +930,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -156.51
       objectReference: {fileID: 0}
+    - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
+      propertyPath: obj1
+      value: 
+      objectReference: {fileID: 302804580}
     - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
       propertyPath: sceneName
       value: TransmitterScene
