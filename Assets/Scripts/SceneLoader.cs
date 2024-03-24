@@ -19,30 +19,26 @@ public class SceneLoader : MonoBehaviour
         spriteRenderer.enabled = false;
         // Check if SpriteRenderer component is found
         if (spriteRenderer == null)
-        {
             Debug.LogError("SpriteRenderer component not found!");
-        }
     }
     private void OnMouseDown()
     {
         Debug.Log("Alert Clicked");
-        // Load the scene as a popup
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.LoadScene(sceneName);
 
     }
 
     public void Update()
     {
-        if ((isActive == true) & (timer >= 0))
+        if (isActive && timer >= 0)
         {
             spriteRenderer.enabled = true;
             textMeshPro.enabled = true;
             timer -= Time.deltaTime;
             textMeshPro.text = timer.ToString();
         }
-        else if (isActive == true) {
+        else if (isActive) 
             SceneManager.LoadScene("MainMenu");
-        }
         else
         {
             spriteRenderer.enabled = false;

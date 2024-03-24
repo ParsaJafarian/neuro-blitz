@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Electron : MonoBehaviour
 {
 
-    public float speed = 1.0f;
+    public float speed = 5.0f;
 
     // Start is called before the first frame update
     void Start()

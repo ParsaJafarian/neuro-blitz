@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MazeScene.unity
     guid: b2f53d07b7def604da8c0f5f1439f001
+  - enabled: 1
+    path: Assets/Scenes/TransmitterScene.unity
+    guid: d160ab732db5f5f48bc87b7500f9445d
+  - enabled: 1
+    path: Assets/Scenes/MyelinScene.unity
+    guid: d5191b7c14382cd41b5224d6207da440
+  - enabled: 1
+    path: Assets/Scenes/RestingPotentialScene.unity
+    guid: efde51e583a5e534aacad1aa8cc0dc3b
   m_configObjects: {}
