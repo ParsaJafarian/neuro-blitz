@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 78cd11c6ec98b4b0491621275f1d0a61
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - sodiumCollider: {instanceID: 0}
+  - potassiumCollider: {instanceID: 0}
+  - ionCollider: {instanceID: 0}
+  - ionBody: {instanceID: 0}
+  - textObject: {fileID: 8811871263783878208, guid: 777dba9fc401f42bd89b484c7f96742f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
