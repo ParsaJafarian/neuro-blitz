@@ -8,11 +8,10 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public string sceneName = "";
-    public float timer = 45;
+    public float timer = 60;
     public bool isActive = false;
     public TextMeshProUGUI textMeshPro;
     public SpriteRenderer spriteRenderer;
-    public Vector3 scaleChange = new Vector3(10f, 10f, 0);
 
     public void Start() {
         textMeshPro.enabled = false;
@@ -34,18 +33,21 @@ public class SceneLoader : MonoBehaviour
 
     public void Update()
     {
-        if (isActive == true)
+        if ((isActive == true) & (timer >= 0))
         {
             spriteRenderer.enabled = true;
             textMeshPro.enabled = true;
             timer -= Time.deltaTime;
             textMeshPro.text = timer.ToString();
-            spriteRenderer.transform.localScale += scaleChange;
-            if (spriteRenderer.transform.localScale.y < 100f || spriteRenderer.transform.localScale.y > 100f)
-            {
-                scaleChange = -scaleChange;
-            }
-
+        }
+        else if (isActive == true) {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            spriteRenderer.enabled = false;
+            textMeshPro.enabled = false;
+            timer = 60;
         }
 
     }
