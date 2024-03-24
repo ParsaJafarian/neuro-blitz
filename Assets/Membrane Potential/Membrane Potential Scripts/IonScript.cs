@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using U = Utils;
 
 public class IonScript : MonoBehaviour
 {
@@ -39,16 +38,18 @@ public class IonScript : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if ((collision.gameObject.name == "SodiumCollider" && !isPotassium && !isDragging))
+        if (collision.gameObject.name == "SodiumCollider" && !isPotassium && !isDragging)
         {
             ionBody.bodyType = RigidbodyType2D.Static;
-            transform.position = sodiumCollider.transform.position;
+            transform.position = new Vector3(sodiumCollider.transform.position.x * Random.Range(0.8f,1.2f), Random.Range(-1.0f,1.0f),0 );
+            Destroy(ionBody);
             inPosition = true;
             
-        } else if (collision.gameObject.name == "PotassiumCollider" && isPotassium)
+        }else if (collision.gameObject.name == "PotassiumCollider" && isPotassium && !isDragging)
         {
             ionBody.bodyType = RigidbodyType2D.Static;
-            transform.position = potassiumCollider.transform.position;
+            transform.position = new Vector3(potassiumCollider.transform.position.x * Random.Range(0.8f, 1.2f), Random.Range(-1.0f, 1.0f), 0);
+            Destroy(ionBody);
             inPosition = true;
         }
 
@@ -65,7 +66,8 @@ public class IonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        sodiumCollider = GameObject.FindGameObjectWithTag("SodiumCollider").GetComponent<BoxCollider2D>();
+        potassiumCollider = GameObject.FindGameObjectWithTag("PotassiumCollider").GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
