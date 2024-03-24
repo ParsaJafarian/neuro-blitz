@@ -48,7 +48,7 @@ public class IonScript : MonoBehaviour
         }else if (collision.gameObject.name == "PotassiumCollider" && isPotassium && !isDragging)
         {
             ionBody.bodyType = RigidbodyType2D.Static;
-            transform.position = new Vector3(potassiumCollider.transform.position.x * Random.Range(0.8f, 1.2f), Random.Range(-1.0f, 1.0f), 0);
+            transform.position = new Vector3(potassiumCollider.transform.position.x * Random.Range(0.8f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
             Destroy(ionBody);
             inPosition = true;
         }
