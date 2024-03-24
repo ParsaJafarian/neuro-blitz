@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using T = TotalIons;
 
 public class GameScript : MonoBehaviour
@@ -45,6 +46,7 @@ public class GameScript : MonoBehaviour
                 currentSodium.transform.position = new Vector3(sodium.transform.position.x + Random.Range(0.5f, 1) * j * 3.0f, potassium.transform.position.y + Random.Range(0f, 1.15f), 0);
             }
             finished = true;
+            SceneManager.LoadScene("MainScene");
         }
     }
 }
