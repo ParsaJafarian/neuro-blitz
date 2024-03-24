@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,7 @@ public class SceneLoader : MonoBehaviour
     public bool isActive = false;
     public TextMeshProUGUI textMeshPro;
     public SpriteRenderer spriteRenderer;
-
+    public Camera MainCamera;
     public void Start() {
         textMeshPro.enabled = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,6 +30,9 @@ public class SceneLoader : MonoBehaviour
         // Load the scene as a popup
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
 
+    }
+    public void setActivity(Boolean activity) {
+        isActive = activity;
     }
 
     public void Update()
