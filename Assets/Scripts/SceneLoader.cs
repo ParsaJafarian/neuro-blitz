@@ -12,8 +12,7 @@ public class SceneLoader : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("Alert Clicked");
-        // Load the scene as a popup
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Update()

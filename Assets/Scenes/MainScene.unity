@@ -516,6 +516,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6469053178017178350, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
+      propertyPath: sceneName
+      value: TransmitterScene
+      objectReference: {fileID: 0}
     - target: {fileID: 9008338986041965719, guid: 41567b8f37c88644c8c6983a6af2e9d0, type: 3}
       propertyPath: m_Name
       value: TransmitterAlert

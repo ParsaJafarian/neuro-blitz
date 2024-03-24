@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Electron : MonoBehaviour
 {
@@ -30,7 +31,6 @@ public class Electron : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Maze completed!");
-        //close the scene
-        gameObject.SetActive(false);
+        SceneManager.LoadScene("MainScene");
     }
 }
