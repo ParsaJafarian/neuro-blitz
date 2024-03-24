@@ -47,6 +47,7 @@ public class GameScript : MonoBehaviour
             }
             finished = true;
             SceneManager.LoadScene("MainScene");
+            ScoreManager.modifyScore(300);
         }
     }
 }

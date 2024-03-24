@@ -34,5 +34,6 @@ public class Electron : MonoBehaviour
         //close the scene
         gameObject.SetActive(false);
         SceneManager.LoadScene("MainScene");
+        ScoreManager.modifyScore(500);
     }
 }

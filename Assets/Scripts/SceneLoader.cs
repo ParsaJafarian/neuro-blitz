@@ -28,7 +28,7 @@ public class SceneLoader : MonoBehaviour
     {
         Debug.Log("Alert Clicked");
         // Load the scene as a popup
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 
     }
     public void setActivity(Boolean activity) {
