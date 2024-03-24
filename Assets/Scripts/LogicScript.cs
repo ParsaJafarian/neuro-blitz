@@ -11,14 +11,12 @@ public class LogicScript : MonoBehaviour
     public static SceneLoader potLogic;
     public static SceneLoader transLogic;
     public static float timer;
-    public SceneLoader[] arrayOfSceneLoaders = { myelinLogic, mazeLogic, potLogic, transLogic};
-    System.Random random = new System.Random();
+    public SceneLoader[] arrayOfSceneLoaders = { myelinLogic, mazeLogic, potLogic, transLogic };
 
 
     void Start()
     {
         timer = 3;
-
     }
 
     // Update is called once per frame
@@ -27,10 +25,10 @@ public class LogicScript : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            if (random != null && arrayOfSceneLoaders != null && arrayOfSceneLoaders.Length > 0)
+            if (arrayOfSceneLoaders != null && arrayOfSceneLoaders.Length > 0)
             {
-                int current = random.Next(0, arrayOfSceneLoaders.Length);
-                arrayOfSceneLoaders[current].setActivity(true);
+                int current = UnityEngine.Random.Range(0, arrayOfSceneLoaders.Length);
+                arrayOfSceneLoaders[current].SetActivity(true);
                 timer = 3;
             }
             else

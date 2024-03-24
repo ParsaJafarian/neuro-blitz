@@ -14,7 +14,8 @@ public class SceneLoader : MonoBehaviour
     public TextMeshProUGUI textMeshPro;
     public SpriteRenderer spriteRenderer;
     public Camera MainCamera;
-    public void Start() {
+    public void Start()
+    {
         textMeshPro.enabled = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
@@ -24,21 +25,17 @@ public class SceneLoader : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if(obj1.name == "TransmitterAlert" || obj1.name == "MyelinAlert")
+        if (obj1.name == "MyelinAlert")
         {
             ScoreManager.modifyScore(100);
             SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
         }
-        else
-        {
-            // Load the scene as a popup
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        }
+        else SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         Debug.Log("Alert Clicked");
-        
 
     }
-    public void setActivity(Boolean activity) {
+    public void SetActivity(bool activity)
+    {
         isActive = activity;
     }
 
@@ -51,7 +48,7 @@ public class SceneLoader : MonoBehaviour
             timer -= Time.deltaTime;
             textMeshPro.text = timer.ToString();
         }
-        else if (isActive) 
+        else if (isActive)
             SceneManager.LoadScene("MainMenu");
         else
         {
