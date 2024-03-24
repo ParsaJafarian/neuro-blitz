@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public GameObject obj1;
     public string sceneName = "";
-    public float timer = 60;
+    public float timer = 3;
     public bool isActive = false;
     public TextMeshProUGUI textMeshPro;
     public SpriteRenderer spriteRenderer;
-
+    public Camera MainCamera;
     public void Start() {
         textMeshPro.enabled = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,9 +24,22 @@ public class SceneLoader : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if(obj1.name == "TransmitterAlert" || obj1.name == "MyelinAlert")
+        {
+            ScoreManager.modifyScore(100);
+            SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            // Load the scene as a popup
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
         Debug.Log("Alert Clicked");
-        SceneManager.LoadScene(sceneName);
+        
 
+    }
+    public void setActivity(Boolean activity) {
+        isActive = activity;
     }
 
     public void Update()
@@ -43,7 +57,7 @@ public class SceneLoader : MonoBehaviour
         {
             spriteRenderer.enabled = false;
             textMeshPro.enabled = false;
-            timer = 60;
+            timer = 3;
         }
 
     }

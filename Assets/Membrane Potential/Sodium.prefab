@@ -104,6 +104,7 @@ MonoBehaviour:
   potassiumCollider: {fileID: 0}
   ionCollider: {fileID: 5121541791794327043}
   ionBody: {fileID: 3082054172232659527}
+  textObject: {fileID: 8811871263783878208, guid: 777dba9fc401f42bd89b484c7f96742f, type: 3}
 --- !u!58 &5121541791794327043
 CircleCollider2D:
   m_ObjectHideFlags: 0
