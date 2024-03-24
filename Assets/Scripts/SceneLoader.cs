@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public string sceneName = "";
-    public float timer = 60;
+    public float timer = 3;
     public bool isActive = false;
     public TextMeshProUGUI textMeshPro;
     public SpriteRenderer spriteRenderer;
@@ -51,7 +51,7 @@ public class SceneLoader : MonoBehaviour
         {
             spriteRenderer.enabled = false;
             textMeshPro.enabled = false;
-            timer = 60;
+            timer = 3;
         }
 
     }

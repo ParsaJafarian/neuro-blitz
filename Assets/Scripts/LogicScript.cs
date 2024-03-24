@@ -31,7 +31,7 @@ public class LogicScript : MonoBehaviour
             {
                 int current = random.Next(0, arrayOfSceneLoaders.Length);
                 arrayOfSceneLoaders[current].setActivity(true);
-                timer = 60;
+                timer = 3;
             }
             else
             {
